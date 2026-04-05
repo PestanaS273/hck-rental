@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --cream-50: #FDFAF5;
+    --cream-100: #FAF6EE;
+    --cream-200: #F3EBD8;
+    --obsidian: #1A1714;
+    --champagne: #C9A96E;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body text-obsidian bg-cream-50;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: #1A1714;
+    color: #FAF6EE;
+  }
+}
+
+@layer components {
+  .heading-display {
+    @apply font-display font-light tracking-wide;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-3 px-8 py-4 bg-obsidian text-cream-50 font-body text-sm tracking-ultra uppercase transition-all duration-500 hover:bg-champagne hover:text-obsidian;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-3 px-8 py-4 border border-obsidian text-obsidian font-body text-sm tracking-ultra uppercase transition-all duration-500 hover:bg-obsidian hover:text-cream-50;
+  }
+
+  .section-label {
+    @apply font-body text-xs tracking-mega uppercase text-champagne;
+  }
+
+  .divider-ornament {
+    @apply flex items-center gap-4;
+  }
+
+  .divider-ornament::before,
+  .divider-ornament::after {
+    content: '';
+    @apply flex-1 h-px bg-cream-300;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .grain {
+    position: relative;
+  }
+
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream-100);
+}
+::-webkit-scrollbar-thumb {
+  background: #C8B48C;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1A1714;
+}
+
+/* Page transition wrapper */
+.page-wrapper {
+  min-height: 100vh;
+}
