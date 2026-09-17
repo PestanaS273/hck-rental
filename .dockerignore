@@ -1,0 +1,12 @@
+node_modules
+dist
+.git
+.agents
+.claude
+design-system
+*.md
+.env*
+.DS_Store
+Dockerfile
+.dockerignore
+dist-ssr
