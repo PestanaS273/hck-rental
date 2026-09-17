@@ -13,13 +13,16 @@ ARG VITE_GSC_VERIFICATION=
 ENV VITE_SITE_URL=$VITE_SITE_URL \
     VITE_GA_ID=$VITE_GA_ID \
     VITE_GSC_VERIFICATION=$VITE_GSC_VERIFICATION
-RUN npm run build
+RUN npm run build && test -f dist/index.html && test -f dist/404.html && test -f dist/sitemap.xml
 
 # ── Serve ─────────────────────────────────────────────────────────────────
 FROM nginx:1.27-alpine
+# curl: lo usa el health check configurable de Coolify.
+RUN apk add --no-cache curl
 COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
 COPY docker/security-headers.conf /etc/nginx/snippets/security-headers.conf
 COPY --from=build /app/dist /usr/share/nginx/html
-EXPOSE 80
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD wget -q --spider http://127.0.0.1/healthz || exit 1
+RUN nginx -t
+EXPOSE 80 3000
+HEALTHCHECK --interval=10s --timeout=3s --start-period=5s --retries=3 \
+  CMD curl -fsS http://127.0.0.1/healthz >/dev/null || exit 1
