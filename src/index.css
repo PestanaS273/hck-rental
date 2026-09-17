@@ -15,6 +15,11 @@
     --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
   }
 
+  html {
+    /* Ninguna transformación decorativa (revelado, parallax) puede generar scroll horizontal. */
+    overflow-x: clip;
+  }
+
   body {
     @apply bg-adobe font-sans text-body-lg font-normal text-ink;
     -webkit-font-smoothing: antialiased;
@@ -133,6 +138,23 @@
   }
   .field[aria-invalid='true'] {
     box-shadow: inset 0 -2px 0 var(--cobre);
+  }
+
+  /* Contenedor de imagen revelada: recorta el zoom inicial y el desplazamiento del parallax. */
+  .reveal-media {
+    overflow: hidden;
+  }
+
+  /* Márgenes seguros en iPhone con isla dinámica y barra inferior (viewport-fit=cover). */
+  .safe-x {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
   }
 
   /* Image that responds softly to hover on its parent `.group`. */

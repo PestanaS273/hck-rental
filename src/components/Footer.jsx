@@ -5,7 +5,7 @@ import { navLinks, site, whatsappUrl } from '../content/site'
 // Pie sobre el mismo lienzo: el sitio no alterna bandas oscuras y claras.
 export default function Footer() {
   return (
-    <footer className="reveal mt-section border-t border-adobe-line pb-10 pt-12 text-body">
+    <footer className="reveal mt-section border-t border-adobe-line pb-[max(2.5rem,calc(env(safe-area-inset-bottom)+1.5rem))] pt-12 text-body">
       <Container className="grid gap-10 md:grid-cols-3">
         <div>
           <p className="text-subheading text-cobre">HCK Rental</p>

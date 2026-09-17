@@ -11,7 +11,7 @@ export default function PhotoBand({ image, caption, className = 'h-[52vh] min-h-
         </Parallax>
       </div>
       {caption && (
-        <figcaption className="reveal mx-auto mt-3 w-full max-w-page px-4 text-caption uppercase text-ink-soft sm:px-6">{caption}</figcaption>
+        <figcaption className="reveal safe-x mx-auto mt-3 w-full max-w-page text-caption uppercase text-ink-soft sm:px-6">{caption}</figcaption>
       )}
     </figure>
   )

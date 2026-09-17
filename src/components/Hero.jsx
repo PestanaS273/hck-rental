@@ -33,7 +33,7 @@ export default function Hero({ image, video, eyebrow, title, meta, nextId }) {
       <div className="absolute inset-0 -z-10 bg-onyx/40" aria-hidden="true" />
 
       <motion.div
-        className="mx-auto flex w-full max-w-[1440px] flex-col items-center px-4 pt-16 text-center sm:px-6"
+        className="safe-x mx-auto flex w-full max-w-[1440px] flex-col items-center pt-[max(4rem,calc(env(safe-area-inset-top)+3rem))] text-center sm:px-6"
         style={reduce ? undefined : { y: contentY, opacity: contentOpacity }}
       >
         {eyebrow && <p className="hero-enter type-label">{eyebrow}</p>}
@@ -52,7 +52,7 @@ export default function Hero({ image, video, eyebrow, title, meta, nextId }) {
       {nextId && (
         <a
           href={`#${nextId}`}
-          className="hero-enter group absolute bottom-6 left-1/2 inline-flex h-11 w-11 -translate-x-1/2 items-center justify-center text-cobre-light"
+          className="hero-enter group absolute bottom-[max(1.5rem,env(safe-area-inset-bottom))] left-1/2 inline-flex h-11 w-11 -translate-x-1/2 items-center justify-center text-cobre-light"
           style={{ '--i': 5 }}
           aria-label="Ir al contenido"
         >

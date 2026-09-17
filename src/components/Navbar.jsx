@@ -40,7 +40,7 @@ export default function Navbar() {
         initial={{ opacity: 0, y: -12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease, delay: 0.1 }}
-        className="mx-auto grid h-20 w-full max-w-[1440px] grid-cols-[1fr_auto_1fr] items-center px-4 sm:px-6 lg:h-24 lg:px-10"
+        className="safe-x safe-top mx-auto grid h-20 w-full max-w-[1440px] grid-cols-[1fr_auto_1fr] items-center sm:px-6 lg:h-24 lg:px-10"
       >
         <nav aria-label="Principal" className="hidden items-center gap-8 md:flex">
           {left.map((l) => <NavLink key={l.to} to={l.to} className={linkClass}>{l.label}</NavLink>)}
@@ -79,12 +79,12 @@ export default function Navbar() {
             role="dialog"
             aria-modal="true"
             aria-label="Menú"
-            className="fixed inset-0 z-50 flex flex-col bg-adobe text-cobre"
+            className="safe-x safe-top safe-bottom fixed inset-0 z-50 flex flex-col bg-adobe text-cobre"
             initial={{ clipPath: 'inset(0 0 100% 0)' }}
             animate={{ clipPath: 'inset(0 0 0% 0)', transition: { duration: 0.7, ease } }}
             exit={{ clipPath: 'inset(0 0 100% 0)', transition: { duration: 0.5, ease } }}
           >
-            <div className="grid h-20 grid-cols-[1fr_auto_1fr] items-center px-4">
+            <div className="grid h-20 grid-cols-[1fr_auto_1fr] items-center">
               <span />
               <Link to="/" className="inline-flex min-h-11 items-center text-subheading">HCK Rental</Link>
               <button type="button" onClick={() => setMenuOpen(false)} className="inline-flex min-h-11 items-center justify-self-end type-label" autoFocus>

@@ -46,6 +46,8 @@ El interlineado comprimido del display es la firma del sistema: no abrirlo.
 ## Geometría y espacio
 
 - Base 4px. Separación entre bloques: **80px** (`mt-section`). Columna de contenido **1200px** (`max-w-page`), margen lateral 16px móvil / 24px.
+- `viewport-fit=cover`: las fotos llegan a los bordes en iPhone con isla dinámica. El contenido que toca los bordes usa `.safe-x` / `.safe-top` / `.safe-bottom` (`env(safe-area-inset-*)`): navegación, menú, hero, contenedores, pie y botón flotante.
+- Ninguna animación puede producir scroll horizontal: `html { overflow-x: clip }` y `.reveal-media { overflow: hidden }`.
 - Radios: **0** en imágenes, bloques e inputs; **14px** solo en botones (`rounded-button`).
 - Sin sombras, sin elevación, sin tarjetas con fondo o borde. Todo "impreso sobre papel".
 - El contenido siempre va **centrado**; nada de composiciones asimétricas en z ni bentos.

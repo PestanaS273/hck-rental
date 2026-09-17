@@ -24,7 +24,7 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Cotizar por WhatsApp"
-      className={`btn btn-cobre fixed bottom-4 right-4 z-20 bg-adobe transition-[opacity,transform,background-color,color] duration-300 sm:bottom-6 sm:right-6 ${
+      className={`btn btn-cobre fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-[max(1rem,env(safe-area-inset-right))] z-20 bg-adobe transition-[opacity,transform,background-color,color] duration-300 ${
         visible ? 'opacity-100' : 'pointer-events-none translate-y-2 opacity-0'
       }`}
       tabIndex={visible ? 0 : -1}
