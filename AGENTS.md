@@ -2,6 +2,14 @@
 
 Este archivo es el punto de entrada para cualquier sesión o agente que trabaje en este repositorio. Antes de modificar la interfaz, leer `PRODUCT.md` y `DESIGN.md` (el resumen operativo está en `design-system/hck-rental-bolivia/MASTER.md`).
 
+| Documento | Para qué |
+|---|---|
+| `PRODUCT.md` | Qué es el negocio y qué debe lograr el sitio. |
+| `DESIGN.md` | Sistema visual y de movimiento. Fuente de verdad de la interfaz. |
+| `AGENTS.md` (este archivo) | Cómo se trabaja en **este** repositorio. |
+| `PLAYBOOK.md` | Método reutilizable para levantar **otro** sitio a medida desde un design file. |
+| `docs/BITACORA.md` | Qué se hizo aquí, por qué, y las trampas encontradas con su causa. |
+
 ## Contexto del producto
 
 - HCK Rental by VIP Planners produce y resuelve la infraestructura de eventos en Bolivia: carpas, estructuras, pistas de baile, tarimas, soportes y logística integral.
@@ -47,3 +55,11 @@ Este archivo es el punto de entrada para cualquier sesión o agente que trabaje 
 - Todo contenido debe describir con precisión servicios de infraestructura y producción de eventos en Bolivia, evitando keyword stuffing.
 - Cada ruta debe tener título, meta descripción, un único H1, texto alternativo y enlaces internos útiles. Preparar datos estructurados `LocalBusiness`/`EventService` al implementar SEO.
 - Mantener CTA visibles hacia WhatsApp y formulario de cotización. WhatsApp principal confirmado: `+591 77797997`.
+- Ya implementado: prerenderizado por ruta, canonical, Open Graph, datos estructurados `LocalBusiness`, `sitemap.xml`, `robots.txt` y 404 reales. Al añadir una ruta, actualizar `src/content/seo.js`.
+- Verificar Search Console por DNS (sobrevive a cambios de hosting). `VITE_GA_ID` y `VITE_GSC_VERIFICATION` quedan listos para cuando el cliente los entregue.
+
+## Mantenimiento comercial
+
+- Plan vigente: pago único de USD 100 y USD 39 al año (dominio, servidor, SSL, actualizaciones ilimitadas de eventos, SEO y cambios de texto). El dominio y el sitio van a nombre del cliente.
+- El margen del recurrente solo se sostiene porque el sitio es estático: no prometer WordPress gestionado ni servicios que exijan trabajo mensual.
+- La propuesta en PDF y la investigación de precios de Bolivia están en `~/Desktop/HCK-Propuesta/`; el método para regenerarla, en `PLAYBOOK.md` › Fase 9.
