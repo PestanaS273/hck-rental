@@ -3,6 +3,10 @@
 Método reutilizable, extraído de la construcción de HCK Rental. Sirve para el siguiente proyecto aunque el estilo sea
 completamente distinto: cambia el design file, no el procedimiento.
 
+> **Plantilla lista para usar:** `../websites-template-claude` implementa este playbook (esqueleto, scripts de
+> verificación, folleto y los comandos `/feature-start`, `/design-adapt`, `/verificar`, `/propuesta`).
+> Para un cliente nuevo se copia esa carpeta, se renombra y se ejecuta `/feature-start`.
+
 **Entrada:** un design file (enlace de referencia tipo Refero, Figma, PDF de marca o capturas) + el negocio del cliente.
 **Salida:** sitio estático prerenderizado, con movimiento propio, SEO listo, desplegado en Coolify y mantenido por nosotros.
 
